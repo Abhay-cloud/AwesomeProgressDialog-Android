@@ -1,5 +1,8 @@
 # Awesome Progress Dialog 📱
 
+[![JitPack](https://jitpack.io/v/Abhay-cloud/AwesomeProgressDialog-Android.svg)](https://jitpack.io/#Abhay-cloud/AwesomeProgressDialog-Android)
+![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg)
+
 An animated progress dialog library for Android.
 
 <table style="width:50%">
@@ -88,6 +91,10 @@ Current available styles:
 >- STYLE_LOADING_CART
 >- STYLE_LOADING_WHEEL
 >- STYLE_LOADING_EARTH
+>- STYLE_LOADING_SPIDER
+>- STYLE_LOADING_BARS
+>- STYLE_LOADING_CIRCLE
+>- STYLE_LOADING_CIRCLE2
 
 <a name="methods"></a>
 ## Methods
@@ -116,6 +123,13 @@ progressDialog.setStyle(AwesomeProgressDialog.STYLE_LOADING_FERRISWHEEL);
 ```Groovy
 progressDialog.dismissDialog();
 ```
+
+>- .setNoInternet(String title);
+*This method don't detect connection change. 
+You'll have to call it in your custom internet detection code.*
+```Groovy
+progressDialog.setNoInternet("Connection Lost");
+```
 <a name="contribution"></a>
 ## Contributing
 
@@ -130,3 +144,16 @@ Let's develop with collaborations. We would love to have contributions by raisin
 This library is built by using:.
 - [Lottie for Android](https://github.com/airbnb/lottie-android)
 - [Lottie Files](https://lottiefiles.com/)
+
+## LICENSE
+Project is published under the Apache 2.0 license. Feel free to clone and modify repository as you want, but don't forget to add reference to authors.
+
+## Connect with me
+If you have any difficulty then just message me on Instagram or Telegram.
+
+[![](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Abhay_Developer)
+[![](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/its_sn_abhay/)
+[![](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/abhaycloud)
+
+
+### Made with ❤️ by Abhay
