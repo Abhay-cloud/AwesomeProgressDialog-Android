@@ -4,12 +4,15 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import com.airbnb.lottie.LottieAnimationView;
+
+import org.w3c.dom.Text;
 
 public class CustomDialog {
 
@@ -28,6 +31,10 @@ public class CustomDialog {
     public static final String STYLE_LOADING_SANDCLOCK = "STYLE_LOADING_SANDCLOCK";
     public static final String STYLE_LOADING_FERRISWHEEL = "STYLE_LOADING_FERRISWHEEL";
     public static final String STYLE_LOADING_WHEEL = "STYLE_LOADING_WHEEL";
+    public static final String STYLE_LOADING_SPIDER = "STYLE_LOADING_SPIDER";
+    public static final String STYLE_LOADING_BARS = "STYLE_LOADING_BARS";
+    public static final String STYLE_LOADING_CIRCLE = "STYLE_LOADING_CIRCLE";
+    public static final String STYLE_LOADING_CIRCLE2 = "STYLE_LOADING_CIRCLE2";
 
     public CustomDialog(Context context){
         this.context = context;
@@ -117,6 +124,26 @@ public class CustomDialog {
                 lottieAnimationView.playAnimation();
                 break;
 
+            case STYLE_LOADING_SPIDER:
+                lottieAnimationView.setAnimation(R.raw.loadingspider);
+                lottieAnimationView.playAnimation();
+                break;
+
+            case STYLE_LOADING_BARS:
+                lottieAnimationView.setAnimation(R.raw.loadingbars);
+                lottieAnimationView.playAnimation();
+                break;
+
+            case STYLE_LOADING_CIRCLE:
+                lottieAnimationView.setAnimation(R.raw.loadingcircle);
+                lottieAnimationView.playAnimation();
+                break;
+
+            case STYLE_LOADING_CIRCLE2:
+                lottieAnimationView.setAnimation(R.raw.loadingthreecircles);
+                lottieAnimationView.playAnimation();
+                break;
+
             default:
                 lottieAnimationView.setAnimation(R.raw.loadingsimple);
                 lottieAnimationView.playAnimation();
@@ -133,6 +160,19 @@ public class CustomDialog {
         dialog.create();
         dialog.show();
     }
+
+    public void setNoInternet(String title){
+        LottieAnimationView lottieAnimationView = dialog.findViewById(R.id.animation_view);
+        TextView titleView = dialog.findViewById(R.id.titleView);
+        lottieAnimationView.setAnimation(R.raw.unplug);
+        lottieAnimationView.playAnimation();
+        if (title.isEmpty()){
+            titleView.setVisibility(View.GONE);
+        }else {
+            titleView.setText(title);
+        }
+    }
+
 
     public void dismissDialog(){
         dialog.dismiss();

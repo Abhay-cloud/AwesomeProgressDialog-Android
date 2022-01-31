@@ -27,6 +27,10 @@ public class AwesomeProgressDialog {
     public static final String STYLE_LOADING_SANDCLOCK = "STYLE_LOADING_SANDCLOCK";
     public static final String STYLE_LOADING_FERRISWHEEL = "STYLE_LOADING_FERRISWHEEL";
     public static final String STYLE_LOADING_WHEEL = "STYLE_LOADING_WHEEL";
+    public static final String STYLE_LOADING_SPIDER = "STYLE_LOADING_SPIDER";
+    public static final String STYLE_LOADING_BARS = "STYLE_LOADING_BARS";
+    public static final String STYLE_LOADING_CIRCLE = "STYLE_LOADING_CIRCLE";
+    public static final String STYLE_LOADING_CIRCLE2 = "STYLE_LOADING_CIRCLE2";
 
 
     public AwesomeProgressDialog(Context context){
@@ -117,6 +121,26 @@ public class AwesomeProgressDialog {
                 lottieAnimationView.playAnimation();
                 break;
 
+            case STYLE_LOADING_SPIDER:
+                lottieAnimationView.setAnimation(R.raw.loadingspider);
+                lottieAnimationView.playAnimation();
+                break;
+
+            case STYLE_LOADING_BARS:
+                lottieAnimationView.setAnimation(R.raw.loadingbars);
+                lottieAnimationView.playAnimation();
+                break;
+
+            case STYLE_LOADING_CIRCLE:
+                lottieAnimationView.setAnimation(R.raw.loadingcircle);
+                lottieAnimationView.playAnimation();
+                break;
+
+            case STYLE_LOADING_CIRCLE2:
+                lottieAnimationView.setAnimation(R.raw.loadingthreecircles);
+                lottieAnimationView.playAnimation();
+                break;
+
             default:
                 lottieAnimationView.setAnimation(R.raw.loadingsimple);
                 lottieAnimationView.playAnimation();
@@ -133,6 +157,19 @@ public class AwesomeProgressDialog {
         dialog.create();
         dialog.show();
     }
+
+    public void setNoInternet(String title){
+        LottieAnimationView lottieAnimationView = dialog.findViewById(R.id.animation_view);
+        TextView titleView = dialog.findViewById(R.id.titleView);
+        lottieAnimationView.setAnimation(R.raw.unplug);
+        lottieAnimationView.playAnimation();
+        if (title.isEmpty()){
+            titleView.setVisibility(View.GONE);
+        }else {
+            titleView.setText(title);
+        }
+    }
+
 
     public void dismissDialog(){
         dialog.dismiss();

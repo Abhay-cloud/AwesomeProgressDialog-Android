@@ -19,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
 
         CustomDialog customDialog = new CustomDialog(MainActivity.this);
         customDialog.setStyle(CustomDialog.STYLE_LOADING_WHEEL);
-        customDialog.addTitle("Simple Loading...");
-        customDialog.hideTitle();
-
+//        customDialog.setError("No Connection");
+        customDialog.addTitle("Loading...");
+//        customDialog.hideTitle();
+//        customDialog.setNoInternet("Connection Lost");
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
